@@ -1,0 +1,1091 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="brdlmillihexapod_description">
+  <link
+    name="torso">
+    <inertial>
+      <origin
+        xyz="8.33400015654912E-17 -0.000249999999999993 6.45102127134358E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.00532000000000012" />
+      <inertia
+        ixx="2.80944416666679E-06"
+        ixy="1.26868530846048E-24"
+        ixz="-1.15402497533965E-19"
+        iyy="1.66615033583965E-05"
+        iyz="-1.72161776496159E-22"
+        izz="1.38522808583963E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/torso.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/torso.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="leg1_link1">
+    <inertial>
+      <origin
+        xyz="-0.00999999999999997 0.00025 -0.0150000000000002"
+        rpy="0 0 0" />
+      <mass
+        value="0.0003" />
+      <inertia
+        ixx="2.250625E-08"
+        ixy="-6.57935047583324E-27"
+        ixz="4.68072008956712E-23"
+        iyy="3.25E-08"
+        iyz="-7.62988088301783E-27"
+        izz="1.000625E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg1_link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg1_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="torso__leg1_link1"
+    type="revolute">
+    <origin
+      xyz="0.0430902255639095 0 0.0500000000000002"
+      rpy="3.14159265358979 1.5707963267949 0" />
+    <parent
+      link="torso" />
+    <child
+      link="leg1_link1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="10" />
+  </joint>
+  <link
+    name="leg1_link2">
+    <inertial>
+      <origin
+        xyz="-0.015 0.000249999999999997 -0.01"
+        rpy="0 0 0" />
+      <mass
+        value="0.0003" />
+      <inertia
+        ixx="1.000625E-08"
+        ixy="-8.65243220384846E-26"
+        ixz="1.18193506446058E-23"
+        iyy="3.25E-08"
+        iyz="-1.02506309655543E-24"
+        izz="2.250625E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg1_link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg1_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg1_link1__leg1_link2"
+    type="revolute">
+    <origin
+      xyz="-0.00500000000000002 0 -0.0300000000000001"
+      rpy="0 0 0" />
+    <parent
+      link="leg1_link1" />
+    <child
+      link="leg1_link2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="10" />
+  </joint>
+  <link
+    name="leg1_link3">
+    <inertial>
+      <origin
+        xyz="-0.0174999999999998 0.000249999999999354 -0.0100000000000004"
+        rpy="0 0 0" />
+      <mass
+        value="0.00035" />
+      <inertia
+        ixx="1.16739583333333E-08"
+        ixy="-6.1463010856905E-27"
+        ixz="3.44471415503436E-24"
+        iyy="4.73958333333332E-08"
+        iyz="-6.59068316618222E-24"
+        izz="3.57364583333333E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg1_link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg1_link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg1_link2__leg1_link3"
+    type="revolute">
+    <origin
+      xyz="-0.03 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="leg1_link2" />
+    <child
+      link="leg1_link3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="10" />
+  </joint>
+  <link
+    name="leg2_link1">
+    <inertial>
+      <origin
+        xyz="-0.01 0.00025 0.0150000000000002"
+        rpy="0 0 0" />
+      <mass
+        value="0.0003" />
+      <inertia
+        ixx="2.250625E-08"
+        ixy="-8.67124723169078E-26"
+        ixz="4.18190189287142E-24"
+        iyy="3.25E-08"
+        iyz="-9.08727386065875E-27"
+        izz="1.000625E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg2_link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg2_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="torso__leg2_link1"
+    type="revolute">
+    <origin
+      xyz="0.0130902255639098 0 0.0500000000000005"
+      rpy="3.14159265358979 1.5707963267949 0" />
+    <parent
+      link="torso" />
+    <child
+      link="leg2_link1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="10" />
+  </joint>
+  <link
+    name="leg2_link2">
+    <inertial>
+      <origin
+        xyz="-0.015 0.000249999999999998 -0.00999999999999999"
+        rpy="0 0 0" />
+      <mass
+        value="0.0003" />
+      <inertia
+        ixx="1.000625E-08"
+        ixy="-4.43742936636948E-26"
+        ixz="1.34141771708445E-23"
+        iyy="3.25E-08"
+        iyz="-1.4697815968282E-24"
+        izz="2.250625E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg2_link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg2_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg2_link1__leg2_link2"
+    type="revolute">
+    <origin
+      xyz="-0.005 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="leg2_link1" />
+    <child
+      link="leg2_link2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="10" />
+  </joint>
+  <link
+    name="leg2_link3">
+    <inertial>
+      <origin
+        xyz="-0.0174999999999999 0.00024999999999955 -0.0100000000000001"
+        rpy="0 0 0" />
+      <mass
+        value="0.00035" />
+      <inertia
+        ixx="1.16739583333333E-08"
+        ixy="2.05479604215668E-27"
+        ixz="2.70955539200844E-23"
+        iyy="4.73958333333336E-08"
+        iyz="-1.71952008903282E-24"
+        izz="3.57364583333336E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg2_link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg2_link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg2_link2__leg2_link3"
+    type="revolute">
+    <origin
+      xyz="-0.03 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="leg2_link2" />
+    <child
+      link="leg2_link3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="10" />
+  </joint>
+  <link
+    name="leg3_link1">
+    <inertial>
+      <origin
+        xyz="-0.01 0.00025 0.0150000000000001"
+        rpy="0 0 0" />
+      <mass
+        value="0.0003" />
+      <inertia
+        ixx="2.250625E-08"
+        ixy="-2.38122799040218E-26"
+        ixz="-2.72407052268251E-23"
+        iyy="3.24999999999999E-08"
+        iyz="9.517319546485E-27"
+        izz="1.00062499999999E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg3_link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg3_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="torso__leg3_link1"
+    type="revolute">
+    <origin
+      xyz="-0.04691 0 0.05"
+      rpy="3.1416 1.5708 0" />
+    <parent
+      link="torso" />
+    <child
+      link="leg3_link1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="10" />
+  </joint>
+  <link
+    name="leg3_link2">
+    <inertial>
+      <origin
+        xyz="-0.015 0.00025 -0.00999999999999999"
+        rpy="0 0 0" />
+      <mass
+        value="0.0003" />
+      <inertia
+        ixx="1.000625E-08"
+        ixy="4.30431456475191E-26"
+        ixz="2.33685637065344E-23"
+        iyy="3.24999999999999E-08"
+        iyz="1.65365611491139E-24"
+        izz="2.250625E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg3_link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg3_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg3_link1__leg3_link2"
+    type="revolute">
+    <origin
+      xyz="-0.00499999999999989 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="leg3_link1" />
+    <child
+      link="leg3_link2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="10" />
+  </joint>
+  <link
+    name="leg3_link3">
+    <inertial>
+      <origin
+        xyz="-0.0175 0.000249999999999649 -0.0100000000000002"
+        rpy="0 0 0" />
+      <mass
+        value="0.00035" />
+      <inertia
+        ixx="1.16739583333333E-08"
+        ixy="-9.29196036004443E-26"
+        ixz="2.90973796395913E-23"
+        iyy="4.73958333333334E-08"
+        iyz="-3.43187524152249E-24"
+        izz="3.57364583333334E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg3_link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg3_link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg3_link2__leg3_link3"
+    type="revolute">
+    <origin
+      xyz="-0.03 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="leg3_link2" />
+    <child
+      link="leg3_link3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="10" />
+  </joint>
+  <link
+    name="leg4_link1">
+    <inertial>
+      <origin
+        xyz="0.01 0.00025 -0.0150000000000002"
+        rpy="0 0 0" />
+      <mass
+        value="0.0003" />
+      <inertia
+        ixx="2.250625E-08"
+        ixy="8.18316765689817E-26"
+        ixz="-1.40645077507073E-23"
+        iyy="3.24999999999999E-08"
+        iyz="-3.70042776330073E-26"
+        izz="1.000625E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg4_link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg4_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="torso__leg4_link1"
+    type="revolute">
+    <origin
+      xyz="0.04309 0 -0.05"
+      rpy="3.1416 1.5708 0" />
+    <parent
+      link="torso" />
+    <child
+      link="leg4_link1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="10" />
+  </joint>
+  <link
+    name="leg4_link2">
+    <inertial>
+      <origin
+        xyz="0.015 0.000249999999999998 -0.01"
+        rpy="0 0 0" />
+      <mass
+        value="0.0003" />
+      <inertia
+        ixx="1.000625E-08"
+        ixy="-3.38582644772895E-26"
+        ixz="9.83581448732817E-24"
+        iyy="3.25E-08"
+        iyz="-1.11345588583405E-24"
+        izz="2.250625E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg4_link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg4_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg4_link1__leg4_link2"
+    type="revolute">
+    <origin
+      xyz="0.00500000000000001 0 -0.0300000000000001"
+      rpy="0 0 0" />
+    <parent
+      link="leg4_link1" />
+    <child
+      link="leg4_link2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="10" />
+  </joint>
+  <link
+    name="leg4_link3">
+    <inertial>
+      <origin
+        xyz="0.0174999999999999 0.000249999999999998 -0.0100000000000003"
+        rpy="0 0 0" />
+      <mass
+        value="0.00035" />
+      <inertia
+        ixx="1.16739583333333E-08"
+        ixy="-2.2098271413235E-25"
+        ixz="-8.07571900902903E-24"
+        iyy="4.73958333333335E-08"
+        iyz="1.46198146142568E-24"
+        izz="3.57364583333335E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg4_link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg4_link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg4_link2__leg4_link3"
+    type="revolute">
+    <origin
+      xyz="0.03 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="leg4_link2" />
+    <child
+      link="leg4_link3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="10" />
+  </joint>
+  <link
+    name="leg5_link1">
+    <inertial>
+      <origin
+        xyz="0.01 0.00025 0.0150000000000002"
+        rpy="0 0 0" />
+      <mass
+        value="0.0003" />
+      <inertia
+        ixx="2.250625E-08"
+        ixy="-3.47132410054955E-27"
+        ixz="-1.21290162903837E-23"
+        iyy="3.25E-08"
+        iyz="-9.51731954659145E-27"
+        izz="1.000625E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg5_link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg5_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="torso__leg5_link1"
+    type="revolute">
+    <origin
+      xyz="0.01309 0 -0.05"
+      rpy="3.1416 1.5708 0" />
+    <parent
+      link="torso" />
+    <child
+      link="leg5_link1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="10" />
+  </joint>
+  <link
+    name="leg5_link2">
+    <inertial>
+      <origin
+        xyz="0.015 0.000249999999999999 -0.01"
+        rpy="0 0 0" />
+      <mass
+        value="0.0003" />
+      <inertia
+        ixx="1.000625E-08"
+        ixy="-1.23171026920935E-26"
+        ixz="-4.72810530077302E-24"
+        iyy="3.25E-08"
+        iyz="-1.13524817965326E-24"
+        izz="2.250625E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg5_link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg5_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg5_link1__leg5_link2"
+    type="revolute">
+    <origin
+      xyz="0.00499999999999996 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="leg5_link1" />
+    <child
+      link="leg5_link2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="10" />
+  </joint>
+  <link
+    name="leg5_link3">
+    <inertial>
+      <origin
+        xyz="0.0175 0.000250000000000004 -0.00999999999999995"
+        rpy="0 0 0" />
+      <mass
+        value="0.00035" />
+      <inertia
+        ixx="1.16739583333333E-08"
+        ixy="7.76226710305203E-26"
+        ixz="-1.23174588384869E-23"
+        iyy="4.73958333333332E-08"
+        iyz="-6.3275545756404E-25"
+        izz="3.57364583333332E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg5_link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg5_link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg5_link2__leg5_link3"
+    type="revolute">
+    <origin
+      xyz="0.03 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="leg5_link2" />
+    <child
+      link="leg5_link3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="10" />
+  </joint>
+  <link
+    name="leg6_link1">
+    <inertial>
+      <origin
+        xyz="0.01 0.00025 0.0150000000000001"
+        rpy="0 0 0" />
+      <mass
+        value="0.0003" />
+      <inertia
+        ixx="2.250625E-08"
+        ixy="-1.20877888146441E-26"
+        ixz="-8.62437511944731E-24"
+        iyy="3.25E-08"
+        iyz="2.49485393097846E-26"
+        izz="1.000625E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg6_link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg6_link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="torso__leg6_link1"
+    type="revolute">
+    <origin
+      xyz="-0.0469097744360894 0 -0.0500000000000018"
+      rpy="3.14159265358979 1.5707963267949 0" />
+    <parent
+      link="torso" />
+    <child
+      link="leg6_link1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="10" />
+  </joint>
+  <link
+    name="leg6_link2">
+    <inertial>
+      <origin
+        xyz="0.015 0.00025 -0.01"
+        rpy="0 0 0" />
+      <mass
+        value="0.0003" />
+      <inertia
+        ixx="1.000625E-08"
+        ixy="-2.09335674062298E-26"
+        ixz="-1.55399232424217E-23"
+        iyy="3.25E-08"
+        iyz="-1.0996695422915E-24"
+        izz="2.250625E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg6_link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg6_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg6_link1__leg6_link2"
+    type="revolute">
+    <origin
+      xyz="0.00499999999999997 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="leg6_link1" />
+    <child
+      link="leg6_link2" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="10" />
+  </joint>
+  <link
+    name="leg6_link3">
+    <inertial>
+      <origin
+        xyz="0.0175 0.000249999999999999 -0.00999999999999995"
+        rpy="0 0 0" />
+      <mass
+        value="0.00035" />
+      <inertia
+        ixx="1.16739583333333E-08"
+        ixy="6.03897416017413E-26"
+        ixz="-7.21717523681999E-24"
+        iyy="4.73958333333332E-08"
+        iyz="1.40490250845733E-24"
+        izz="3.57364583333332E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg6_link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://brdlmillihexapod_description/meshes/leg6_link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leg6_link2__leg6_link3"
+    type="revolute">
+    <origin
+      xyz="0.03 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="leg6_link2" />
+    <child
+      link="leg6_link3" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="10"
+      velocity="10" />
+  </joint>
+</robot>
