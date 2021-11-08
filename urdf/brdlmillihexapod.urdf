@@ -3,7 +3,13 @@
      Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
-  name="brdlmillihexapod_description">
+  name="brdlmillihexapod">
+  <link name="base_link"/>
+  <joint name="j_brdlmillihexapod_attachment" type="fixed">
+    <parent link="base_link"/>
+    <child link="torso"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
   <link
     name="torso">
     <inertial>
@@ -44,6 +50,9 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="torso">
+    <material>Gazebo/Grey</material>
+  </gazebo>
   <link
     name="leg1_link1">
     <inertial>
@@ -84,6 +93,9 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="leg1_link1">
+    <material>Gazebo/Grey</material>
+  </gazebo>
   <joint
     name="torso__leg1_link1"
     type="revolute">
@@ -102,6 +114,16 @@
       effort="10"
       velocity="10" />
   </joint>
+  <transmission name="torso__leg1_link1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="torso__leg1_link1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_torso__leg1_link1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
   <link
     name="leg1_link2">
     <inertial>
@@ -142,6 +164,9 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="leg1_link2">
+    <material>Gazebo/Grey</material>
+  </gazebo>
   <joint
     name="leg1_link1__leg1_link2"
     type="revolute">
@@ -160,6 +185,16 @@
       effort="10"
       velocity="10" />
   </joint>
+  <transmission name="leg1_link1__leg1_link2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="leg1_link1__leg1_link2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_leg1_link1__leg1_link2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
   <link
     name="leg1_link3">
     <inertial>
@@ -200,6 +235,9 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="leg1_link3">
+    <material>Gazebo/Grey</material>
+  </gazebo>
   <joint
     name="leg1_link2__leg1_link3"
     type="revolute">
@@ -218,6 +256,16 @@
       effort="10"
       velocity="10" />
   </joint>
+  <transmission name="leg1_link2__leg1_link3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="leg1_link2__leg1_link3">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_leg1_link2__leg1_link3">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
   <link
     name="leg2_link1">
     <inertial>
@@ -258,6 +306,9 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="leg2_link1">
+    <material>Gazebo/Grey</material>
+  </gazebo>
   <joint
     name="torso__leg2_link1"
     type="revolute">
@@ -276,6 +327,16 @@
       effort="10"
       velocity="10" />
   </joint>
+  <transmission name="torso__leg2_link1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="torso__leg2_link1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="torso__leg2_link1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
   <link
     name="leg2_link2">
     <inertial>
@@ -316,6 +377,9 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="leg2_link2">
+    <material>Gazebo/Grey</material>
+  </gazebo>
   <joint
     name="leg2_link1__leg2_link2"
     type="revolute">
@@ -334,6 +398,16 @@
       effort="10"
       velocity="10" />
   </joint>
+  <transmission name="leg2_link1__leg2_link2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="leg2_link1__leg2_link2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_leg2_link1__leg2_link2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
   <link
     name="leg2_link3">
     <inertial>
@@ -374,6 +448,9 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="leg2_link3">
+    <material>Gazebo/Grey</material>
+  </gazebo>
   <joint
     name="leg2_link2__leg2_link3"
     type="revolute">
@@ -392,6 +469,16 @@
       effort="10"
       velocity="10" />
   </joint>
+  <transmission name="leg2_link2__leg2_link3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="leg2_link2__leg2_link3">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_leg2_link2__leg2_link3">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
   <link
     name="leg3_link1">
     <inertial>
@@ -432,6 +519,9 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="leg3_link1">
+    <material>Gazebo/Grey</material>
+  </gazebo>
   <joint
     name="torso__leg3_link1"
     type="revolute">
@@ -450,6 +540,16 @@
       effort="10"
       velocity="10" />
   </joint>
+  <transmission name="torso__leg3_link1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="torso__leg3_link1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_torso__leg3_link1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
   <link
     name="leg3_link2">
     <inertial>
@@ -490,6 +590,9 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="leg3_link2">
+    <material>Gazebo/Grey</material>
+  </gazebo>
   <joint
     name="leg3_link1__leg3_link2"
     type="revolute">
@@ -508,6 +611,16 @@
       effort="10"
       velocity="10" />
   </joint>
+  <transmission name="leg3_link1__leg3_link2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="leg3_link1__leg3_link2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_leg3_link1__leg3_link2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
   <link
     name="leg3_link3">
     <inertial>
@@ -548,6 +661,9 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="leg3_link3">
+    <material>Gazebo/Grey</material>
+  </gazebo>
   <joint
     name="leg3_link2__leg3_link3"
     type="revolute">
@@ -566,6 +682,16 @@
       effort="10"
       velocity="10" />
   </joint>
+  <transmission name="leg3_link2__leg3_link3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="leg3_link2__leg3_link3">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_leg3_link2__leg3_link3">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
   <link
     name="leg4_link1">
     <inertial>
@@ -606,6 +732,9 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="leg4_link1">
+    <material>Gazebo/Grey</material>
+  </gazebo>
   <joint
     name="torso__leg4_link1"
     type="revolute">
@@ -624,6 +753,16 @@
       effort="10"
       velocity="10" />
   </joint>
+  <transmission name="torso__leg4_link1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="torso__leg4_link1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_torso__leg4_link1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
   <link
     name="leg4_link2">
     <inertial>
@@ -664,6 +803,9 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="leg4_link2">
+    <material>Gazebo/Grey</material>
+  </gazebo>
   <joint
     name="leg4_link1__leg4_link2"
     type="revolute">
@@ -682,6 +824,16 @@
       effort="10"
       velocity="10" />
   </joint>
+  <transmission name="leg4_link1__leg4_link2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="leg4_link1__leg4_link2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_leg4_link1__leg4_link2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
   <link
     name="leg4_link3">
     <inertial>
@@ -722,6 +874,9 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="leg4_link3">
+    <material>Gazebo/Grey</material>
+  </gazebo>
   <joint
     name="leg4_link2__leg4_link3"
     type="revolute">
@@ -740,6 +895,16 @@
       effort="10"
       velocity="10" />
   </joint>
+  <transmission name="leg4_link2__leg4_link3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="leg4_link2__leg4_link3">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_leg4_link2__leg4_link3">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
   <link
     name="leg5_link1">
     <inertial>
@@ -780,6 +945,9 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="leg5_link1">
+    <material>Gazebo/Grey</material>
+  </gazebo>
   <joint
     name="torso__leg5_link1"
     type="revolute">
@@ -798,6 +966,16 @@
       effort="10"
       velocity="10" />
   </joint>
+  <transmission name="torso__leg5_link1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="torso__leg5_link1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_torso__leg5_link1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
   <link
     name="leg5_link2">
     <inertial>
@@ -838,6 +1016,9 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="leg5_link2">
+    <material>Gazebo/Grey</material>
+  </gazebo>
   <joint
     name="leg5_link1__leg5_link2"
     type="revolute">
@@ -856,6 +1037,16 @@
       effort="10"
       velocity="10" />
   </joint>
+  <transmission name="leg5_link1__leg5_link2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="leg5_link1__leg5_link2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_leg5_link1__leg5_link2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
   <link
     name="leg5_link3">
     <inertial>
@@ -896,6 +1087,9 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="leg5_link3">
+    <material>Gazebo/Grey</material>
+  </gazebo>
   <joint
     name="leg5_link2__leg5_link3"
     type="revolute">
@@ -914,6 +1108,16 @@
       effort="10"
       velocity="10" />
   </joint>
+  <transmission name="leg5_link2__leg5_link3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="leg5_link2__leg5_link3">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_leg5_link2__leg5_link3">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
   <link
     name="leg6_link1">
     <inertial>
@@ -954,6 +1158,9 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="leg6_link1">
+    <material>Gazebo/Grey</material>
+  </gazebo>
   <joint
     name="torso__leg6_link1"
     type="revolute">
@@ -972,6 +1179,16 @@
       effort="10"
       velocity="10" />
   </joint>
+  <transmission name="torso__leg6_link1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="torso__leg6_link1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_torso__leg6_link1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
   <link
     name="leg6_link2">
     <inertial>
@@ -1012,6 +1229,9 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="leg6_link2">
+    <material>Gazebo/Grey</material>
+  </gazebo>
   <joint
     name="leg6_link1__leg6_link2"
     type="revolute">
@@ -1030,6 +1250,16 @@
       effort="10"
       velocity="10" />
   </joint>
+  <transmission name="leg6_link1__leg6_link2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="leg6_link1__leg6_link2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_leg6_link1__leg6_link2">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
   <link
     name="leg6_link3">
     <inertial>
@@ -1070,6 +1300,9 @@
       </geometry>
     </collision>
   </link>
+  <gazebo reference="leg6_link3">
+    <material>Gazebo/Grey</material>
+  </gazebo>
   <joint
     name="leg6_link2__leg6_link3"
     type="revolute">
@@ -1088,4 +1321,19 @@
       effort="10"
       velocity="10" />
   </joint>
+  <transmission name="leg6_link2__leg6_link3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="leg6_link2__leg6_link3">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="m_leg6_link2__leg6_link3">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <gazebo>
+    <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
+      <robotNamespace>/brdlmillihexapod</robotNamespace>
+    </plugin>
+  </gazebo>
 </robot>
